@@ -10,7 +10,7 @@ This model is intended to be used to predict income bracket (above or below 50k 
 data.
 ## Data
 The data is publicly available census data from 1995 obtained from the UC Irvine machine learning repository. The 
-dataset has 48,842 records and 14 features.
+dataset has 32,561 records and 14 features.
 ### Training Data
 Training data is a subset of the overall data, consisting of 80% of the original dataset. No stratification was 
 stipulated. A One Hot Encoder was used on the features and a label binarizer was used on the labels.
