@@ -2,10 +2,8 @@ import pickle
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from ml.data import process_data
 from sklearn.linear_model import LogisticRegression
-from data import process_data
 
 
-# Optional: implement hyperparameter tuning.
 def train_model(X_train, y_train):
     """
     Trains a machine learning model and returns it.
@@ -21,8 +19,8 @@ def train_model(X_train, y_train):
     model
         Trained machine learning model.
     """
-    # TODO: implement the function
-    lr = LogisticRegression(max_iter=1000)
+
+    lr = LogisticRegression()
     lr.fit(X_train, y_train)
     return lr
 
@@ -63,7 +61,7 @@ def inference(model, X):
     preds : np.array
         Predictions from the model.
     """
-    # TODO: implement the function
+
     preds = model.predict(X)
     return preds
 
@@ -125,9 +123,8 @@ def performance_on_categorical_slice(
     fbeta : float
 
     """
-    # TODO: implement the function
-    X_slice, y_slice, _, _ = process_data((data[column_name] == slice_value),
-                                          categorical_features=[categorical_features],
+    X_slice, y_slice, _, _ = process_data((data[data[column_name] == slice_value]),
+                                          categorical_features=categorical_features,
                                           label=label,
                                           training=False,
                                           encoder=encoder,
