@@ -67,7 +67,6 @@ async def post_inference(data: Data):
     ]
     data_processed, _, _, _ = process_data(data,
                                            cat_features,
-                                           label='salary',
                                            training=False,
                                            encoder=encoder)
 
